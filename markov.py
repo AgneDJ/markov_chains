@@ -59,11 +59,15 @@ def make_chains(text_string):
 
 # empty={{"odds": ["browntabby", "chonky"]}}
 # empty['ods'] <----I access the list
-words = text.split()
-print("this words")
-for i in range(len(words)-2):
-    tup_key = (words[i].words[i+1])
-    str_val = words[i+2]
+    words = text.split()
+    print("this words")
+    for i in range(len(words)-2):
+        tup_key = (words[i].words[i+1])
+        str_val = words[i+2]
+        if tup_key not in chains:
+            chains.update([tup_key]:[str_val])
+        else:
+
 
 
 # if key is already in dict#
