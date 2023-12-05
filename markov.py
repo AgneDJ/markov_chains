@@ -47,7 +47,30 @@ def make_chains(text_string):
     chains = {}
 
     # your code goes here
+# creating dict
+# cut it to list
+# iterate through lists
+# potencial key is first word, second w in a tuple
+# value is third word
+# add key to the dictionary
+# add string value to the list
+# return dictionary
 
+
+# empty={{"odds": ["browntabby", "chonky"]}}
+# empty['ods'] <----I access the list
+words = text.split()
+print("this words")
+for i in range(len(words)-2):
+    tup_key = (words[i].words[i+1])
+    str_val = words[i+2]
+
+
+# if key is already in dict#
+# if key is not in dict do smth else
+
+
+#
     return chains
 
 
