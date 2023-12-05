@@ -11,8 +11,12 @@ def open_and_read_file(file_path):
     """
 
     # your code goes here
+    with open(file_path) as f:
+        read_data = f.read()
+        return read_data
 
-    return 'Contents of your file as one long string'
+
+open_and_read_file("green-eggs.txt")
 
 
 def make_chains(text_string):
