@@ -72,22 +72,31 @@ def make_text(chains):
     words = []
 
     random_key = choice(list(chains.keys()))
-    print(random_key)
+    # print(random_key)
 
-    list_first_words = chains[random_key]
-    print(list_first_words)
+    random_value = chains[random_key]
+    # print(first_string)
 
-    random_first_word = choice(list_first_words)
-    print(random_first_word)
+    first_string_of_words = list(random_key)
+    first_string_of_words = (first_string_of_words + random_value)
+    print(first_string_of_words)
 
-    container = []
-    container.append(random_key[0])
-    container.append(random_first_word)
-    print(container)
-    print(container[0] + " "
-          + container[1])
+    for i, word in enumerate(first_string_of_words):
+        key = (words[i + 1], words[i + 2])
+        value = chains[key]
+        first_string_of_words.append(value)
 
-    # for word in random_key:
+    # second_key = (first_string_of_words[1], first_string_of_words[2])
+    # second_string = chains[second_key]
+    # print(second_string)
+
+    # container.append(random_key[0])
+    # container.append(random_key[1])
+    # print(container)
+    # print(container[0] + " "
+    #      + container[1])
+
+    # for words in list(chains)
 
     # starting_point = chains[0]
     # print(chains{[0]}
@@ -103,8 +112,6 @@ def make_text(chains):
     # list(chains[tup_key[0]])
 
     # return ' '.join(words)
-
-
 input_path = 'green-eggs.txt'
 
 # Open the file and turn it into one long string
