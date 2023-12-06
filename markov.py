@@ -70,48 +70,19 @@ def make_text(chains):
     """Return text from chains."""
 
     words = []
+    key = choice(list(chains.keys()))  # ('would', 'you')
+    words.append(key[0])
+    words.append(key[1])
 
-    random_key = choice(list(chains.keys()))
-    # print(random_key)
+    while key in chains:
+        values = chains[key]  # ['could', ...]
+        word = choice(values)  # 'could'
+        words.append(word)
+        key = (key[1], word)  # ('you', 'could')
 
-    random_value = chains[random_key]
-    # print(first_string)
+    return ' '.join(words)  # string method for joining
 
-    first_string_of_words = list(random_key)
-    first_string_of_words = (first_string_of_words + random_value)
-    print(first_string_of_words)
 
-    for i, word in enumerate(first_string_of_words):
-        key = (words[i + 1], words[i + 2])
-        value = chains[key]
-        first_string_of_words.append(value)
-
-    # second_key = (first_string_of_words[1], first_string_of_words[2])
-    # second_string = chains[second_key]
-    # print(second_string)
-
-    # container.append(random_key[0])
-    # container.append(random_key[1])
-    # print(container)
-    # print(container[0] + " "
-    #      + container[1])
-
-    # for words in list(chains)
-
-    # starting_point = chains[0]
-    # print(chains{[0]}
-    # print(starting_point)
-
-    # for i, collection in enumerate(chains):
-    # #    print("The {collection}'s index is {i}")
-
-    # keys_only = chains.keys()
-    # keys_only = keys_only.items()
-    # print(keys_only[0])
-
-    # list(chains[tup_key[0]])
-
-    # return ' '.join(words)
 input_path = 'green-eggs.txt'
 
 # Open the file and turn it into one long string
