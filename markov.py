@@ -8,7 +8,7 @@ def open_and_read_file(file_path):
     Takes a string that is a file path, opens the file, and turns the file's contents as one string of text."""
     with open(file_path) as f:
         read_data = f.read()
-        return read_data
+        return read_data.split()
 
 
 def make_chains(text_string):
@@ -54,9 +54,6 @@ def make_chains(text_string):
     # return the dictionary
     chains = {}
 
-    text = open_and_read_file("green-eggs.txt")
-    text_string = text.split()
-
     for i in range(len(text_string)-2):
         tup_key = (text_string[i], text_string[i+1])
         str_val = [text_string[i+2]]
@@ -83,7 +80,7 @@ def make_text(chains):
     return ' '.join(words)  # string method for joining
 
 
-input_path = 'green-eggs.txt'
+input_path = 'gettysburg.txt'
 
 # Open the file and turn it into one long string
 input_text = open_and_read_file(input_path)
